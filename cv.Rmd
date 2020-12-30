@@ -1,0 +1,146 @@
+---
+title: "Jian Shen's CV"
+author: Jian Shen
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: false
+  cache_data:
+    value: false
+output:
+  pagedown::html_resume:
+    css: ['css/cv.css', 'css/custom.css','resume']
+    self_contained: true
+---
+
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(magrittr) # For the pipe
+source("cv_printing_functions.r")
+
+# Read in all data and initialize a CV printer object
+CV <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/1HERsY82vxw9x2EcnnsojCfUv5uIiK_UJHK3Do2NbPsQ/edit#gid=917338460",
+  pdf_mode = params$pdf_mode,
+  cache_data = params$cache_data
+)
+
+CV$entries_data <- CV$entries_data %>% dplyr::filter(in_resume_long == TRUE)
+```
+
+
+```{r}
+# When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
+if(params$pdf_mode) {
+    cat("
+<style>
+:root{
+  --decorator-outer-offset-left: -6.5px;
+}
+</style>")
+}
+```
+
+
+Aside
+================================================================================
+
+
+```{r}
+if(params$pdf_mode){
+  cat("View this CV online with links at _xxxxxx/cv/_")
+} else {
+  cat("[<i class='fas fa-download'></i> Download the latest version ](https://github.com/shenjianwhy/cv/jianSHEN_cv.pdf)")
+}
+```
+
+Software {#software}
+--------------------------------------------------------------------------------
+
+- <i class="fas fa-box-open"></i> [Package {aeda}](https://github.com/ShenJianWHy/Exploratory-Data-Analysis) - Author. 
+
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+
+```{r}
+CV %>% print_contact_info()
+```
+
+Certificates {#certificates}
+--------------------------------------------------------------------------------
+
+- <i class="fas fa-file-contract"></i> [Certified International Investment Analyst (CIIA)](https://www.aciia.org/) 
+
+- <i class="fas fa-file-contract"></i> Associate of China Actuaries Association (ACAA)
+
+- <i class="fas fa-file-contract"></i> CFA Level III candidate
+
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+- **Highly skilled in:** Python, R, R shiny, SQL, VBA, Tableau, Excel
+
+- **Intermediate level:** Talend, html, Git, LaTeX
+
+- **Experienced in:** data analysis and visualization, statistical learning, and optimization methods
+
+Languages {#languages}
+--------------------------------------------------------------------------------
+
+- **Chinese:** Native
+
+- **English:** Proficient
+
+- **French:** Beginner
+
+
+Main
+================================================================================
+
+Jian Shen {#title}
+--------------------------------------------------------------------------------
+
+```{r}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro") 
+```
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('education')
+```
+
+Industry Experience {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('industry_positions')
+```
+
+
+Research and Projects {data-icon=share-alt}
+--------------------------------------------------------------------------------
+
+
+```{r}
+CV %<>% print_section('projects')
+```
+
+
+Disclaimer {#disclaimer style="width: var(--sidebar-width); padding-left: var(--sidebar-horizontal-padding);"}
+--------------------------------------------------------------------------------
+
+Code available on <i class="fa fa-github"></i>  [GitHub](https://github.com/shenjianwhy/cv)
+
+
+Last updated on `r Sys.Date()`

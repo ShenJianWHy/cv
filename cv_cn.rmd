@@ -1,0 +1,228 @@
+---
+title: Jian SHEN's resume
+author: Jian SHEN
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: false
+  cache_data:
+    value: false
+output:
+  pagedown::html_resume:
+    css: ['css/cv_cn.css', 'css/custom_cn.css', 'resume']
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: true
+
+---
+
+
+
+
+Aside
+================================================================================
+
+![logo](me.jpg){width=100%}
+
+开源项目/包 {#software}
+--------------------------------------------------------------------------------
+
+- <i class="fas fa-box-open"></i> [Package {aeda}](https://github.com/ShenJianWHy/Exploratory-Data-Analysis) - 作者 
+
+
+联系 {#contact}
+--------------------------------------------------------------------------------
+- <i class='fa fa-envelope'></i> jian.shen@edhec.com
+- <i class='fa fa-github'></i> [GitHub](https://github.com/shenjianwhy)
+- 备注：请发邮件或者致电法国号码 (+33 0695158548)
+
+
+证书 {#certificates}
+--------------------------------------------------------------------------------
+
+- <i class="fas fa-file-contract"></i> [Certified International Investment Analyst (CIIA)](https://www.aciia.org/) 
+
+- <i class="fas fa-file-contract"></i> Associate of China Actuaries Association (ACAA)
+
+- <i class="fas fa-file-contract"></i> CFA 2级通过
+
+
+技能 {#skills}
+--------------------------------------------------------------------------------
+
+- **精通熟练:** Python, R, R shiny, SQL, VBA, Tableau, Excel
+
+- **中等水平:** Talend, html, Git, LaTeX
+
+- **擅长:** 数据分析和可视化，统计学习和金融机器学习
+
+语言 {#languages}
+--------------------------------------------------------------------------------
+
+
+- **英语:** 精通/适应全英文工作环境
+
+- **法语:** 基础/日常对话
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+在线查看完整版本[ <i class="fas fa-link"></i>]()
+
+最后更新日期 `r Sys.Date()`.
+
+
+Main
+================================================================================
+
+沈 坚{#title}
+--------------------------------------------------------------------------------
+
+你好，我是沈坚，目前就读于风险与金融硕士专业
+
+
+教育 {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+### 管理学硕士/风险与金融双硕士
+
+法国北方高等商学院 (EDHEC)
+
+尼斯/伦敦，法国/英国
+
+05-2021 - 09-2018
+
+- **相关课程:** 资产组合，高级衍生物，高级固定收益，计量学，资产定价， 实证金融；校⻓优等生名录 (前5%)
+
+
+### 高分子工程学士学位
+
+四川大学，年级：3.53/4，前10%
+
+成都，中国
+
+06-2015 - 09-2011
+
+### Coursera证书
+
+Coursera
+
+线上
+
+N/A
+
+- **专项课程**：[实践中的TensorFlow](https://www.coursera.org/professional-certificates/tensorflow-in-practice)，[金融机器学习和强化学习](https://www.coursera.org/specializations/machine-learning-reinforcement-finance)，[使用Python和机器学习进行投资管理](https://www.coursera.org/specializations/investment-management-python-machine-learning)，[深度学习](https://www.coursera.org/specializations/deep-learning)
+
+工作经历 {data-icon=suitcase}
+-------------------------------------------------------------------------------
+
+### 数据科学家(实习)
+
+Europ Assistance (Generali集团)
+
+巴黎，法国
+
+12-2020 - 06-2020
+
+
+- 开发R Shiny Apps用于自动探索性数据分析和数据流管理。
+- 为美国，波兰等团队创建了保险数据自动分析可视化报告和赔付率报告。
+- 维护公司精算R程序包，定期组织分享R Shiny的最佳实践经验，并使用机器学习模型（集成模型和神经网络）开发财产和人员伤亡定价工具。
+
+
+### 量化开发(实习)
+
+Alphien
+
+巴黎，法国
+
+06-2020 - 03-2020
+
+- 开发R和Pyhon程序包(Qlib)，用于实现策略的设计，评估，回测和实时监控。
+- 撰写用户手册关于如何使用平台数据来创建简单的策略
+
+
+### 商业智能分析师(实习)
+
+Areka咨询
+
+巴黎，法国
+
+03-2020 - 10-2019
+
+- 使用Talend和PostgreSQL 提取，转换和加载来自不同客户的数据。
+- 定义KPI，创建Tableau可视化报告，参与讨论最佳旅行成本解决方案。
+- 将Excel报表转换为商业智能可视化报告，使用Python自动执行重复性任务。
+
+### 研究助理
+
+ERI Scientific Beta of EDHEC Risk Institute
+
+尼斯，法国
+
+06-2019 - 02-2019
+
+- 评估美国市场超额债券收益率(excess return)随时间变化的风险溢价，研究收益率预测因子模型的稳健性。[链接](https://github.com/ShenJianWHy/Bond-Excess-Return/blob/main/Understanding%20the%20Bond%20Excess%20Return.pdf)
+
+### 技术支持
+
+博恩实业有限公司
+
+深圳，中国
+
+12-2016 - 09-2015
+
+- 收集和分析市场数据以支持业务决策。
+- 训练有素的销售人员，并协助他们解决技术难题。
+
+项目，论文和经历 {data-icon=share-alt}
+--------------------------------------------------------------------------------
+
+### 机器学习在因子投资中(smart beta)的应用
+
+N/A
+
+N/A
+
+2020
+
+### 衍生品定价，[code](https://github.com/ShenJianWHy/advanced-derivative-pricing)
+
+N/A
+
+N/A
+
+2020
+
+
+### 投资组合的构建和优化，[code](https://github.com/ShenJianWHy/portfolio-construction)，[book](https://bookdown.org/shenjian0824/portr/)
+
+N/A
+
+N/A
+
+2019
+
+### VBA Excel在金融建模中的应用，[code](https://github.com/ShenJianWHy/VBA-Excel-Application-in-Financial-Modeling)
+
+N/A
+
+N/A
+
+2018
+
+### 交易策略及其分析，[code](https://github.com/ShenJianWHy/R-for-Trading-Strategy)
+
+N/A
+
+N/A
+
+2018
+
+### 其他所有项目及其完整介绍，[link](https://github.com/ShenJianWHy?tab=repositories)
+
+N/A
+
+N/A
+
+N/A

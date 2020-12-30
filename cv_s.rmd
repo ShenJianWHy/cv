@@ -1,0 +1,125 @@
+---
+title: Jian SHEN's resume
+author: Jian SHEN
+date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: false
+  cache_data:
+    value: true
+output:
+  pagedown::html_resume:
+    css: ['css/cv_s.css', 'css/custom_s.css', 'resume']
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: true
+
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+library(magrittr) # For the pipe
+source("cv_printing_functions.r")
+
+# Read in all data and initialize a CV printer object
+CV <- create_CV_object(
+  data_location = "https://docs.google.com/spreadsheets/d/1HERsY82vxw9x2EcnnsojCfUv5uIiK_UJHK3Do2NbPsQ/edit#gid=917338460",
+  pdf_mode = params$pdf_mode,
+  cache_data = params$cache_data
+)
+
+CV$entries_data <- CV$entries_data %>% dplyr::filter(in_resume == TRUE)
+```
+
+
+Aside
+================================================================================
+
+![logo](me.jpg){width=100%}
+
+Software {#software}
+--------------------------------------------------------------------------------
+
+- <i class="fas fa-box-open"></i> [Package {aeda}](https://github.com/ShenJianWHy/Exploratory-Data-Analysis) - Author. 
+
+
+Contact {#contact}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %>% print_contact_info()
+```
+
+
+Certificates {#certificates}
+--------------------------------------------------------------------------------
+
+
+- <i class="fas fa-file-contract"></i> [Certified International Investment Analyst (CIIA)](https://www.aciia.org/) 
+
+- <i class="fas fa-file-contract"></i> Associate of China Actuaries Association (ACAA)
+
+- <i class="fas fa-file-contract"></i> CFA Level III candidate
+
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+```{r}
+print_skill(CV)
+```
+
+Languages {#languages}
+--------------------------------------------------------------------------------
+
+```{r}
+print_language(CV)
+```
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+View the full version [online <i class="fas fa-link"></i>]()
+
+Last updated on `r Sys.Date()`.
+
+
+Main
+================================================================================
+
+Jian Shen {#title}
+--------------------------------------------------------------------------------
+
+```{r}
+# Note the special double pipe so we modify the CV object in place
+CV %<>% print_text_block("intro") 
+```
+
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+
+```{r}
+CV %<>% print_section('education')
+```
+
+
+Industry Experience {data-icon=suitcase}
+-------------------------------------------------------------------------------
+
+
+```{r}
+CV %<>% print_section('industry_positions')
+```
+
+Selected Research and Projects {data-icon=share-alt}
+--------------------------------------------------------------------------------
+
+
+```{r}
+CV %<>% print_section('projects')
+```
